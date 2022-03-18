@@ -5,7 +5,7 @@
         <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
 
         <div class="mb-12 xl:mb-0">
-          <h4 v-if="isSignedUp">Thank you - we'll be in touch shortly.</h4>
+          <h4 v-if="isSignedUp">Password correct, please click here for private area: https://wkbca.netlify.app/blog</h4>
 
           <form
             v-else
@@ -73,15 +73,15 @@ export default class Home extends Vue {
       .join('&');
   }
 
-  validEmail(email): boolean {
+  validPassword(pw): boolean {
     // eslint-disable-next-line
     //const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     //return re.test(email);
-    return true;
+    return (pw == "kahuku");
   }
 
   async handleSubmit(): Promise<void> {
-    if (!this.validEmail(this.form.email)) {
+    if (!this.validPassword(this.form.email)) {
       this.$refs.emailInput.focus();
       return;
     }
