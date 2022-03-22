@@ -5,21 +5,21 @@
         <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
 
         <div class="mb-12 xl:mb-0">
-          <h4 v-if="isSignedUp">Password correct, please click here for private area: https://wkbca.netlify.app/blog</h4>
+          <h4 v-if="isPasswordOK">Password correct</h4>
 
           <form
             v-else
             @submit.prevent="handleSubmit"
-            name="signups"
+            name="passwordEntry"
             netlify
             class="flex items-center border-b border-b-2 border-blue-400 py-2"
           >
             <input
-              ref="emailInput"
-              v-model="form.email"
+              ref="hoaPasswordInput"
+              v-model="form.hoaPassword"
               class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="text"
-              name="email"
+              name="hoaPassword"
               placeholder="HOA Password"
               aria-label="HOA Password"
             />
@@ -61,10 +61,10 @@ export default class Home extends Vue {
     return this.$store.state.posts;
   }
 
-  isSignedUp = false;
+  isPasswordOK = false;
 
   form = {
-    email: '',
+    hoaPassword: '',
   };
 
   encode(data): string {
@@ -76,13 +76,13 @@ export default class Home extends Vue {
   validPassword(pw): boolean {
     // eslint-disable-next-line
     //const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //return re.test(email);
+    //return re.test(hoaPassword);
     return (pw == "kahuku");
   }
 
   async handleSubmit(): Promise<void> {
-    if (!this.validPassword(this.form.email)) {
-      this.$refs.emailInput.focus();
+    if (!this.validPassword(this.form.hoaPassword)) {
+      this.$refs.hoaPasswordInput.focus();
       return;
     }
 
@@ -90,10 +90,10 @@ export default class Home extends Vue {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({ 'form-name': 'signups', ...this.form }),
+        body: this.encode({ 'form-name': 'passwordEntry', ...this.form }),
       });
 
-      this.isSignedUp = true;
+      this.isPasswordOK = true;
     } catch (error) {
       console.error(error);
     }
