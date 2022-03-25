@@ -33,7 +33,7 @@ import { MetaInfo } from 'vue-meta';
     };
   },
 })
-export default class BlogPost extends Vue {
+export default class LibraryPost extends Vue {
   post!: Post;
 
   async asyncData({ params, payload }): Promise<{ post: Post }> {
@@ -42,7 +42,7 @@ export default class BlogPost extends Vue {
     }
 
     try {
-      const post = require(`@/content/blog/${params.slug}.json`);
+      const post = require(`@/content/library/${params.slug}.json`);
 
       return {
         post,

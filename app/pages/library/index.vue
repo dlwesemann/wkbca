@@ -1,16 +1,27 @@
 <template>
-  <section class="blog">
+  <section class="library">
     <div class="py-8 md:py-16 text-center">
       <h1 class="text-lg md:text-xl lg:text-4xl xl:text-6xl">Library</h1>
       <h2 class="text-base md:text-lg lg:text-xl xl:text-2xl">
-        West Kawela Bay Community Association Posts
+        West Kawela Bay Community Association Library
       </h2>
+
+
+        <div class="mb-12 xl:mb-0">
+          <h4 v-if="isPasswordOK">Password correct</h4>
+          <h4 v-else>Password incorrect</h4>
+
+
+
+        </div>
+
+
     </div>
 
     <div class="flex flex-wrap md:-mx-4 pb-20">
       <div v-for="(post, index) in posts" :key="index" class="w-full md:w-1/2 my-4 md:px-4">
         <div class="post">
-          <nuxt-link :to="`/blog/${post.slug}`">
+          <nuxt-link :to="`/library/${post.slug}`">
             <img
               :alt="post.title"
               class="w-full"
@@ -46,18 +57,18 @@ const Pagination = () => import('@/components/commons/pagination.vue');
 
   head(): MetaInfo {
     return {
-      title: 'Blog',
+      title: 'Library',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Blog index',
+          content: 'Library index',
         },
       ],
     };
   },
 })
-export default class BlogIndex extends Vue {
+export default class LibraryIndex extends Vue {
   currentPage!: number;
 
   totalPages!: number;
@@ -84,7 +95,7 @@ export default class BlogIndex extends Vue {
 </script>
 
 <style lang="scss">
-.blog {
+.library {
   .post {
     @apply shadow-md;
     transition: all 0.2s cubic-bezier(0.64, 0, 0.35, 1);
