@@ -56,13 +56,12 @@ import settings from '@/content/settings/general.json';
 })
 export default class Home extends Vue {
   welcomeText = settings.welcomeText;
-
+/*
   beforeCreate() {
      window.sessionStorage.setItem("needPassword","TRUE");
      };
   }
-
-
+*/
   get posts(): Post[] {
     return this.$store.state.posts;
   }
