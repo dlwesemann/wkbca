@@ -37,13 +37,8 @@ export default class LibraryPost extends Vue {
   post!: Post;
 
   async asyncData({ params, payload }): Promise<{ post: Post }> {
-   
-//    if (!window.localStorage.getItem("isLoggedIn")) {
-//      window.location.replace("https://wkbca.netlify.app/");
-//    }
 
-
-    if (payload) {
+if (payload) {
       return { post: payload };
     }
 
