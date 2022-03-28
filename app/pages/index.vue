@@ -6,7 +6,7 @@
 
         <div class="mb-12 xl:mb-0">
           <h4 v-if="isPasswordOK">Password correct</h4>
-
+          <h4 v-else>Password incorrect, reload page to retry</h4>
           <form
             v-else
             @submit.prevent="handleSubmit"
@@ -94,7 +94,7 @@ export default class Home extends Vue {
       });
 
       this.isPasswordOK = true;
-      window.localStorage.setItem("isLoggedIn","TRUE");
+      window.sessionStorage.setItem("isLoggedIn","TRUE");
       window.location.replace("https://wkbca.netlify.app/library");
     } catch (error) {
       console.error(error);
