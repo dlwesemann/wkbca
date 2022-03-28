@@ -5,17 +5,6 @@
       <h2 class="text-base md:text-lg lg:text-xl xl:text-2xl">
         West Kawela Bay Community Association Library
       </h2>
-
-
-        <div class="mb-12 xl:mb-0">
-          <h4 v-if="isPasswordOK">Password correct</h4>
-          <h4 v-else>Password incorrect</h4>
-
-
-
-        </div>
-
-
     </div>
 
     <div class="flex flex-wrap md:-mx-4 pb-20">
