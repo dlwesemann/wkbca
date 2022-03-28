@@ -6,7 +6,6 @@
 
         <div class="mb-12 xl:mb-0">
           <h4 v-if="isPasswordOK">Password correct</h4>
-          <h4 v-else-if="needPassword === 'TRUE'">Password incorrect, reload page to retry</h4>
           <form
             v-else
             @submit.prevent="handleSubmit"
@@ -56,6 +55,10 @@ import settings from '@/content/settings/general.json';
 })
 export default class Home extends Vue {
   welcomeText = settings.welcomeText;
+
+//below "<h4 v-if" above
+//          <h4 v-else-if="needPassword === 'TRUE'">Password incorrect, reload page to retry</h4>
+
 /*
   beforeCreate() {
      window.sessionStorage.setItem("needPassword","TRUE");
@@ -100,7 +103,7 @@ export default class Home extends Vue {
 
       this.isPasswordOK = true;
       window.sessionStorage.setItem("isLoggedIn","TRUE");
-      window.sessionStorage.setItem("needPassword","FALSE");
+      //window.sessionStorage.setItem("needPassword","FALSE");
       window.location.replace("https://wkbca.netlify.app/library");
     } catch (error) {
       console.error(error);
