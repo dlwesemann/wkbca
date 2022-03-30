@@ -70,6 +70,11 @@ export default class LibraryIndex extends Vue {
      };
   }
 */
+
+  if (!window.sessionStorage.getItem("isLoggedIn")) {
+     window.location.replace("https://wkbca.netlify.app/");
+  };
+
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
     const { perPage }: { perPage: number } = store.state;
@@ -80,17 +85,12 @@ export default class LibraryIndex extends Vue {
       return range - perPage < indexPage && indexPage <= range;
     });
 
-  beforeCreate() {
-     if (!window.sessionStorage.getItem("isLoggedIn")) {
-        window.location.replace("https://wkbca.netlify.app/");
-     };
-  }
-
     return {
       currentPage: page,
       totalPages: Math.ceil(store.state.posts.length / perPage),
       posts: posts || [],
     };
+
   }
 }
 </script>
