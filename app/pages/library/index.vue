@@ -80,6 +80,11 @@ export default class LibraryIndex extends Vue {
       return range - perPage < indexPage && indexPage <= range;
     });
 
+  beforeCreate() {
+     if (!window.sessionStorage.getItem("isLoggedIn")) {
+        window.location.replace("https://wkbca.netlify.app/");
+     };
+
     return {
       currentPage: page,
       totalPages: Math.ceil(store.state.posts.length / perPage),
