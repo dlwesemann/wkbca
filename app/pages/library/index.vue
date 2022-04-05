@@ -82,14 +82,14 @@ export default class LibraryIndex extends Vue {
       return range - perPage < indexPage && indexPage <= range;
     });
 
-     console.log("immediately before if statement in library.asyncData");
+//     console.log("immediately before if statement in library.asyncData");
 
-
+/*
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      }
-
-     console.log("immediately following if statement in library.asyncData");
+*/
+//     console.log("immediately following if statement in library.asyncData");
 
 
 

@@ -36,6 +36,16 @@ import { MetaInfo } from 'vue-meta';
 export default class LibraryPost extends Vue {
   post!: Post;
 
+
+  beforeCreate() {
+    console.log("immediately before if statement in library.asyncData");
+     if (!window.sessionStorage.getItem("isLoggedIn")) {
+        window.location.replace("https://wkbca.netlify.app/");
+     };
+     console.log("immediately after if statement in library.asyncData");
+  }
+
+
   async asyncData({ params, payload }): Promise<{ post: Post }> {
 
 if (payload) {
