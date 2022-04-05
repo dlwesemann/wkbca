@@ -63,6 +63,7 @@ export default class LibraryIndex extends Vue {
   totalPages!: number;
 
   posts: Post[] = [];
+
 /*
   beforeCreate() {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
@@ -70,10 +71,6 @@ export default class LibraryIndex extends Vue {
      };
   }
 */
-
-  if (!window.sessionStorage.getItem("isLoggedIn")) {
-     window.location.replace("https://wkbca.netlify.app/");
-  }
 
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
@@ -84,6 +81,11 @@ export default class LibraryIndex extends Vue {
       const indexPage = index + 1;
       return range - perPage < indexPage && indexPage <= range;
     });
+
+
+     if (!window.sessionStorage.getItem("isLoggedIn")) {
+        window.location.replace("https://wkbca.netlify.app/");
+     }
 
     return {
       currentPage: page,
