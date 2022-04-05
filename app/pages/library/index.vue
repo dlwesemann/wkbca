@@ -72,7 +72,7 @@ export default class LibraryIndex extends Vue {
   }
 */
 
-  created() {
+  mounted() {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
