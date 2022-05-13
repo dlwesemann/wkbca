@@ -1,8 +1,11 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
- <svg width="41px" height="39px" viewBox="0 0 41 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g fill="#0b3765" stroke="none" fill-rule="evenodd">
+
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg">
+
+<g transform="translate(0.000000,50.000000) scale(0.0100000,-0.0100000)" fill="#0b3765" stroke="none">
+
 <path d="M47 4602 c-4 -275 -4 -590 -1 -699 l7 -198 151 -33 c83 -17 174 -35
 201 -38 62 -8 143 -30 200 -55 55 -24 67 -54 68 -168 1 -106 -9 -123 -84 -141
 -72 -17 -88 -56 -44 -104 14 -15 25 -38 25 -51 0 -14 6 -42 14 -62 8 -21 24
