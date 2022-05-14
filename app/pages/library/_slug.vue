@@ -49,7 +49,7 @@ if (payload) {
         post,
       };
     } catch (e) {
-      throw new Error('Not found (content library json');
+      throw new Error('Not found (content library json) exception through from require method');
     }
   }
 }

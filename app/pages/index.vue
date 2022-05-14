@@ -56,15 +56,6 @@ import settings from '@/content/settings/general.json';
 export default class Home extends Vue {
   welcomeText = settings.welcomeText;
 
-//below "<h4 v-if" above
-//          <h4 v-else-if="needPassword === 'TRUE'">Password incorrect, reload page to retry</h4>
-
-/*
-  beforeCreate() {
-     window.sessionStorage.setItem("needPassword","TRUE");
-     };
-  }
-*/
   get posts(): Post[] {
     return this.$store.state.posts;
   }
@@ -82,9 +73,6 @@ export default class Home extends Vue {
   }
 
   validPassword(pw): boolean {
-    // eslint-disable-next-line
-    //const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //return re.test(hoaPassword);
     return (pw == "kahuku");
   }
 

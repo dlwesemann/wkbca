@@ -64,20 +64,14 @@ export default class LibraryIndex extends Vue {
 
   posts: Post[] = [];
 
-/*
-  beforeCreate() {
-     if (!window.sessionStorage.getItem("isLoggedIn")) {
-        window.location.replace("https://wkbca.netlify.app/");
-     };
-  }
-*/
-
   mounted() {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
-  }
 
+     new Error('The Library Page and Load Here (passed isLoggedIn check)');
+
+  }
 
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
@@ -89,16 +83,7 @@ export default class LibraryIndex extends Vue {
       return range - perPage < indexPage && indexPage <= range;
     });
 
-//     console.log("immediately before if statement in library.asyncData");
-
-/*
-     if (!window.sessionStorage.getItem("isLoggedIn")) {
-        window.location.replace("https://wkbca.netlify.app/");
-     }
-*/
-//     console.log("immediately following if statement in library.asyncData");
-
-
+// console.log("immediately following if statement in library.asyncData");
 
     return {
       currentPage: page,
