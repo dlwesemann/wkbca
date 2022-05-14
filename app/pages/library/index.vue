@@ -68,10 +68,9 @@ export default class LibraryIndex extends Vue {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
-     //window.location.replace("@/content/test.html");
   }
 
-  async asyncData({ params, store }) {
+  async asyncData({ params, store }): Promise<{ currentPage: number; totalPages: number; posts: any; }> {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
     const { perPage }: { perPage: number } = store.state;
     const range = page * perPage;
