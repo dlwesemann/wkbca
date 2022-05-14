@@ -91,7 +91,7 @@ export default class Home extends Vue {
 
       this.isPasswordOK = true;
       window.sessionStorage.setItem("isLoggedIn","TRUE");
-      window.location.replace("https://wkbca.netlify.app/library");
+      window.location.replace("https://wkbca.netlify.app/blog");
     } catch (error) {
       console.error(error);
     }

@@ -1,9 +1,9 @@
 <template>
   <section class="blog">
     <div class="py-8 md:py-16 text-center">
-      <h1 class="text-lg md:text-xl lg:text-4xl xl:text-6xl">Announcements</h1>
+      <h1 class="text-lg md:text-xl lg:text-4xl xl:text-6xl">Members Only</h1>
       <h2 class="text-base md:text-lg lg:text-xl xl:text-2xl">
-        West Kawela Bay Community Association Announcements and Communications
+        West Kawela Bay Community Association Members-Only Communications and Library
       </h2>
     </div>
 
@@ -63,6 +63,12 @@ export default class BlogIndex extends Vue {
   totalPages!: number;
 
   posts: Post[] = [];
+
+  mounted() {
+     if (!window.sessionStorage.getItem("isLoggedIn")) {
+        window.location.replace("https://wkbca.netlify.app/");
+     };
+  }
 
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
