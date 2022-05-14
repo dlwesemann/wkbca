@@ -68,9 +68,7 @@ export default class LibraryIndex extends Vue {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
-
-     new Error('The Library Page and Load Here (passed isLoggedIn check)');
-
+     window.location.replace("https://wkbca.netlify.app/test.html");
   }
 
   async asyncData({ params, store }) {
