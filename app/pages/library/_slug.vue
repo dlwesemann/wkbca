@@ -42,6 +42,9 @@ if (payload) {
       return { post: payload };
     }
 
+    console.log("path: @/content/library/${params.slug}.json");
+    console.log(params.slug);
+
     try {
       const post = require(`@/content/library/${params.slug}.json`);
 
