@@ -64,7 +64,7 @@ export default class LibraryIndex extends Vue {
 
   posts: Post[] = [];
 
-  mounted() {
+  beforeMounted() {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
