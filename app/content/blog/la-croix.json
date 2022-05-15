@@ -1,6 +1,6 @@
 {
   "title": "Test 3 Post",
   "publishedAt": "17th Mar 2022",
-  "content": "This is a test post, \ninformation would go here, \nblah, \nblah blah, \nblah, \nblah blah, \nblah, \nblah blah, \nblah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah",
+  "content": "This is a test post information would go here:\n <p>Go to this <a href='https://google.com'>website </b></p> \nblah, \nblah blah, \nblah, \nblah blah, \nblah, \nblah blah, \nblah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah, blah, blah blah",
   "featuredImage": "/images/uploads/kawelabay.jpg"
 }
