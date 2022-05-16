@@ -39,6 +39,9 @@ export default class BlogPost extends Vue {
   async asyncData({ params, payload }): Promise<{ post: Post }> {
     if (payload) {
       return { post: payload };
+
+    console.log(`@/content/blog/${params.slug}.json`);
+
     }
     try {
       const post = require(`@/content/blog/${params.slug}.json`);
