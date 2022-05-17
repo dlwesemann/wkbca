@@ -55,6 +55,7 @@ export default class PageTemplate extends Vue {
         page,
       };
     } catch (e) {
+      window.location.replace("https://wkbca.netlify.app/blog");
       throw new Error('Not found');
     }
   }

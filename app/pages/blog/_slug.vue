@@ -50,6 +50,7 @@ export default class BlogPost extends Vue {
         post,
       };
     } catch (e) {
+      window.location.replace("https://wkbca.netlify.app/blog");
       throw new Error('Not found');
     }
   }
