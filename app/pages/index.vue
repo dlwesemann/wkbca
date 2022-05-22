@@ -6,6 +6,8 @@
 
         <div class="mb-12 xl:mb-0">
           <h4 v-if="isPasswordOK">Password correct</h4>
+
+
           <form
             v-else
             @submit.prevent="handleSubmit"
@@ -30,6 +32,9 @@
               Password
             </button>
           </form>
+
+
+
         </div>
       </div>
       <div class="flex flex-col w-full xl:w-2/5">
@@ -77,10 +82,18 @@ export default class Home extends Vue {
   }
 
   async handleSubmit(): Promise<void> {
+
+    if (this.validPassword(this.form.hoaPassword)) {
+      window.sessionStorage.setItem("isLoggedIn","TRUE");
+      window.location.replace("https://wkbca.netlify.app/blog");
+      return;
+    }
+
     if (!this.validPassword(this.form.hoaPassword)) {
       this.$refs.hoaPasswordInput.focus();
       return;
     }
+
 
     try {
       await fetch('/', {

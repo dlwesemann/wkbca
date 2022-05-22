@@ -64,11 +64,15 @@ export default class BlogIndex extends Vue {
 
   posts: Post[] = [];
 
+
+
   mounted() {
      if (!window.sessionStorage.getItem("isLoggedIn")) {
         window.location.replace("https://wkbca.netlify.app/");
      };
   }
+
+
 
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
