@@ -12,7 +12,7 @@ export interface State {
 
 // Initial State
 export const appState = {
-  perPage: 4,
+  perPage: 6,
   pages: [],
   posts: [],
 };
