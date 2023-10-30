@@ -78,7 +78,7 @@ export default class Home extends Vue {
   }
 
   validPassword(pw): boolean {
-    return (pw == "kahuku");
+    return (pw == "northshore");
   }
 
   async handleSubmit(): Promise<void> {
